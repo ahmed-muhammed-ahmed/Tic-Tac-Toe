@@ -1,0 +1,122 @@
+:root {
+  --dark-blue: #102c57;
+  --darker-blue: #0d2346;
+  --pastel: #dac0a3;
+  --gray: #eadbc8;
+  --white: #f8f0e5;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 3.2rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+}
+
+.container,
+form {
+  display: grid;
+  place-items: center;
+  margin: 10rem 0;
+}
+
+form {
+  margin-top: 20rem;
+}
+
+.container {
+  display: none;
+}
+
+.players {
+  font-family: "Black Ops One", system-ui;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  color: var(--white);
+  border: none;
+  outline: none;
+  padding: 3rem 4.8rem;
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--darker-blue);
+  transform: scale(1.02);
+}
+
+.gameboard .btn {
+  font-family: "Black Ops One", system-ui;
+  font-size: 9.6rem;
+}
+
+.gameboard {
+  height: 55rem;
+  width: 55rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4.8rem 0;
+}
+
+.result {
+  margin-top: 4rem;
+}
+
+.replay-btn {
+  font-size: inherit;
+  background-color: var(--pastel);
+}
+
+.input-player-name {
+  display: flex;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 3.2rem;
+}
+
+button[type="submit"] {
+  padding: 2rem 4rem;
+  background-image: linear-gradient(to right, #102c57, #405679);
+  font-size: inherit;
+  color: var(--white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+label {
+  margin-bottom: 1.2rem;
+  color: var(--darker-blue);
+}
+
+input {
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: var(--darker-blue);
+}
