@@ -70,6 +70,8 @@ form {
 .gameboard .btn {
   font-family: "Black Ops One", system-ui;
   font-size: 9.6rem;
+  height: 17rem;
+  width: 17rem;
 }
 
 .gameboard {
@@ -77,7 +79,7 @@ form {
   width: 55rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.6rem;
   margin: 4.8rem 0;
 }
 
