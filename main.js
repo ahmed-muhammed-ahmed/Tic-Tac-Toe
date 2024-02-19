@@ -12,9 +12,11 @@ const playerOne = document.querySelector(".player-one");
 const playerTwo = document.querySelector(".player-two");
 const playerTurn = document.querySelector(".display-winner");
 const btnMarker = document.querySelectorAll(".btn-mark");
+const btnReplay = document.querySelector(".replay-btn");
 let currentPlayer;
 let player1;
 let player2;
+let gameEnded = false;
 
 startGameBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -44,21 +46,36 @@ const gameBoard = {
 function startGame() {
   btnMarker.forEach(function (marker, i) {
     marker.addEventListener("click", function () {
-      if (gameBoard.marker[i] === "") {
+      if (!gameEnded && gameBoard.marker[i] === "") {
         gameBoard.marker[i] = currentPlayer.marker;
         marker.textContent = currentPlayer.marker;
+        marker.disabled = true;
         if (checkWinner(currentPlayer, gameBoard)) {
           playerTurn.textContent = `${currentPlayer.name} wins! 🏆`;
-          currentPlayer = "";
+          gameEnded = true;
         } else if (isBoardFull(gameBoard)) {
           playerTurn.textContent = "It's a Draw";
+          gameEnded = true;
         } else {
           currentPlayer = currentPlayer === player1 ? player2 : player1;
           playerTurn.textContent = `It's ${currentPlayer.name}'s turn`;
         }
-      } else {
-        console.log("Invalid position or position already taken. Try again.");
       }
     });
   });
 }
+
+btnReplay.addEventListener("click", function () {
+  // Reset game state
+
+  gameBoard.marker.fill(""); // Clear the game board
+  btnMarker.forEach((btn) => {
+    // Clear button text
+    btn.textContent = "";
+    // Enable all buttons
+    btn.disabled = false;
+  });
+  playerTurn.textContent = `It's ${player1.name}'s turn`;
+  // Reset game end flag
+  gameEnded = false;
+});
