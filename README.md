@@ -17,12 +17,13 @@ This is a simple Tic Tac Toe game built with HTML, CSS, and JavaScript. Players 
 
 ## How to Play
 
-1. Open `index.html` in a web browser.
-2. Enter the names of Player 1 and Player 2.
-3. Click the "Start Game" button.
-4. Players take turns clicking on the grid to place their marker (X or O).
-5. The game ends when one player wins or when it's a draw.
-6. To replay the game, click the "Replay" button.
+You can play the game online by visiting the following link: [Play Tic Tac Toe](https://tic-tac-toe-gmae.netlify.app/)
+
+1. Enter the names of Player 1 and Player 2.
+2. Click the "Start Game" button.
+3. Players take turns clicking on the grid to place their marker (X or O).
+4. The game ends when one player wins or when it's a draw.
+5. To replay the game, click the "Replay" button.
 
 ## Files Structure
 
